@@ -63,6 +63,9 @@ class AdminController extends Controller
     public function show($id)
     {
         $info = Admin::find($id);
+        dd($info->hasRole('super_admin'));
+//        dd($info->can('add_user'));
+//        dd($info->roles);
         if($info){
             $message = [
                 'code' => 1,
